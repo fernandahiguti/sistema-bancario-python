@@ -1,35 +1,8 @@
-import banking_system as bs
+from banking_system.services.account_manager import AccountManager
 
 def main():
-    menu = """
-=========== Bem-vindo(a) ===========
-[d] Depositar
-[s] Sacar
-[e] Extrato
-[q] Sair
-====================================
-
-=> """
-
-    account = bs.Account()
-
-    while True:
-        opcao = input(menu)
-
-        if opcao == "d":
-            account.depositar()
-
-        elif opcao == "s":
-            account.sacar()
-
-        elif opcao == "e":
-            account.extrato()
-
-        elif opcao == "q":
-            break
-
-        else:
-            print("Operação inválida, por favor selecione novamente a operação desejada.")
+    manager = AccountManager()
+    manager.run()
 
 if __name__ == "__main__":
     main()
